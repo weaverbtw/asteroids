@@ -11,8 +11,6 @@ This project is a classic Asteroids-inspired game where the player controls a sp
 - Player ship movement and rotation
 - Bullet firing
 - Asteroid spawning and collision detection
-- Score and lives system
-- Game over and restart flow
 - Simple, lightweight Pygame-based setup
 
 ## Requirements
