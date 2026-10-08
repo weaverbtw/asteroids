@@ -4,7 +4,7 @@ A small arcade-style Asteroids game built in Python using Pygame.
 
 ## Overview
 
-This project is a classic Asteroids-inspired game where the player controls a spaceship, avoids incoming asteroids, and shoots them down to survive as long as possible. The game includes movement, shooting, score tracking, lives, and simple gameplay loops typical of the arcade classic.
+This project is a classic Asteroids-inspired game where the player controls a spaceship, avoids incoming asteroids, and shoots them down to survive as long as possible. The game includes movement, shooting, and simple gameplay loops typical of the arcade classic.
 
 ## Features
 
@@ -58,26 +58,6 @@ If your entry point is named differently, use that file instead (for example `py
 - Fire: Space
 - Quit: ctrl + c in terminal
 
-## Project Structure
-
-A typical layout for this project is:
-
-```text
-asteroids/
-├── README.md
-├── main.py
-├── game/
-│   ├── __init__.py
-│   ├── player.py
-│   ├── asteroid.py
-│   ├── bullet.py
-│   └── game.py
-├── assets/
-│   └── ...
-└── requirements.txt
-```
-
-If your project uses a different structure, adapt the run command to the file that launches the game.
 
 ## Notes
 
