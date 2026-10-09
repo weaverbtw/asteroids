@@ -1,70 +1,85 @@
 # Asteroids
 
-A small arcade-style Asteroids game built in Python using Pygame.
+A 2D Asteroids-style arcade game built with **Python** and **Pygame** as part of the [Boot.dev](https://www.boot.dev/) backend developer learning path.
 
-## Overview
-
-This project is a classic Asteroids-inspired game where the player controls a spaceship, avoids incoming asteroids, and shoots them down to survive as long as possible. The game includes movement, shooting, and simple gameplay loops typical of the arcade classic.
+The player controls a spaceship, avoids incoming asteroids, and shoots them to survive. This project helped me practice object-oriented programming, collision detection, game loops, and debugging.
 
 ## Features
 
-- Player ship movement and rotation
-- Bullet firing
-- Asteroid spawning and collision detection
-- Simple, lightweight Pygame-based setup
+- Spaceship movement and rotation using keyboard controls
+- Shooting with a short cooldown between shots
+- Asteroids that spawn from random screen edges
+- Circle-based collision detection between the player, shots, and asteroids
+- Larger asteroids splitting into smaller asteroids when shot
+- Game ends when an asteroid collides with the player
 
-## Requirements
+## Tech stack
 
-To run this project, you need:
+- Python 3.13
+- Pygame 2.6.1
+- `uv` for environment and dependency management
 
-- Python 3.10 or newer
-- Pygame 2.x
-- A desktop environment with a display (for local gameplay)
+## Getting started
 
-Optional:
+You will need [uv](https://docs.astral.sh/uv/getting-started/installation/) installed and a desktop environment capable of opening a Pygame window. The repository includes `.python-version`, `pyproject.toml`, and `uv.lock` to define the Python version and dependencies.
 
-- Virtual environment tooling such as venv
-- Git for version control
-
-## Installation
-
-1. Open a terminal in the project folder.
-2. Create and activate a virtual environment:
+1. Clone the repository:
 
    ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
+   git clone https://github.com/weaverbtw/asteroids.git
+   cd asteroids
    ```
 
-3. Install the required dependency:
+2. Install the project dependencies:
 
    ```bash
-   pip install pygame
+   uv sync
    ```
 
-## Running the Game
+3. Start the game:
 
-From the project root, start the game with:
-
-```bash
-python main.py
-```
-
-If your entry point is named differently, use that file instead (for example `python src/main.py` or similar).
+   ```bash
+   uv run python main.py
+   ```
 
 ## Controls
 
-- Move: W/A/S/D or arrow keys
-- Fire: Space
-- Quit: ctrl + c in terminal
+| Key | Action |
+| --- | --- |
+| `W` | Move forward |
+| `S` | Move backward |
+| `A` | Rotate left |
+| `D` | Rotate right |
+| `Space` | Shoot |
 
+Close the game window to quit. The game also ends when your ship collides with an asteroid.
 
-## Notes
+## Project structure
 
-- The project is designed for local desktop play.
-- If you want to add sound effects, sprites, or a menu screen, those can be added in the game module files.
-- Make sure your Python environment is active before running the project.
+```text
+asteroids/
+├── main.py           # Main game loop and collision handling
+├── player.py         # Player movement, rotation, and shooting
+├── asteroid.py       # Asteroid movement and splitting
+├── asteroidfield.py  # Asteroid spawning
+├── shot.py           # Projectile behavior
+├── circleshape.py    # Shared base class and collision checks
+├── constants.py      # Game settings
+├── logger.py         # Gameplay state and event logging
+├── pyproject.toml    # Project metadata and dependencies
+├── uv.lock           # Locked dependencies
+└── .python-version   # Preferred Python version
+```
 
-## License
+## What I learned
 
-This project is provided for educational and personal use. Add a license if you want to share it publicly under specific terms.
+This was a project I made for Boot.dev. I wrote the gameplay implementation while following the course requirements; some of the more advanced physics-related logic was provided by the course. The project gave me hands-on practice with:
+
+- Designing classes and using inheritance to share behavior
+- Updating and drawing game objects with Pygame sprite groups
+- Managing movement and collision behavior in a game loop
+- Debugging code and using Git for version control
+
+## Current limitations
+
+This version does not include scoring, multiple lives, or a start/restart menu yet.
